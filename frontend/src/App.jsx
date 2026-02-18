@@ -69,7 +69,7 @@ function App() {
         <div className="todo-list">
           {todos.length === 0 ? (
             <div className="empty-state">
-              <p>No tasks yet. Time to build something!</p>
+              <p>No tasksss yet. Time to build something!</p>
             </div>
           ) : (
             todos.map(todo => (
