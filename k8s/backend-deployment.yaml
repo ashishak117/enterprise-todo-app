@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-backend-service # The frontend will talk to this DNS name
+spec:
+  type: ClusterIP
+  selector:
+    app: todo-backend
+  ports:
+    - protocol: TCP
+      port: 8000       # Service Port (Internal K8s network)
+      targetPort: 8000 # Container Port (Python App)
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-backend
+spec:
+  replicas: 2 # High Availability! (Runs 2 copies)
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
+    metadata:
+      labels:
+        app: todo-backend
+    spec:
+      containers:
+      - name: todo-backend
+        # REPLACE THIS WITH YOUR DOCKER HUB USERNAME!
+        image: <YOUR_DOCKER_HUB_USERNAME>/enterprise-todo-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        # Connect to the Database Service we created in Step 2
+        - name: DATABASE_URL
+          value: "mysql+pymysql://user:password@mysql-service:3306/todo_db"
+        # Database secrets (Environment Variables)
+        - name: MYSQL_USER
+          value: "user"
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secrets
+              key: USER_PASSWORD
