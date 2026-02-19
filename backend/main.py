@@ -67,7 +67,7 @@ origins = [
     "http://localhost:5173",    # React App (Localhost)
     "http://127.0.0.1:5173",    # React App (IP)
     "http://localhost:8000",    # Backend (Self)
-    "http://127.0.0.1:8000",    # Backend (IP)
+    "http://3.82.142.12:8000",    # Backend (IP)
 ]
 
 app.add_middleware(
