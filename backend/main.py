@@ -70,11 +70,12 @@ origins = [
     "http://3.82.142.12:8000",    # Backend (IP)
 ]
 
+# --- CORS Configuration (Bulletproof Version) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,      # <--- The Critical Fix
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=["*"],        # Allow ALL IPs and Ports
+    allow_credentials=False,    # MUST be False if origins is "*"
+    allow_methods=["*"],        # Allow ALL methods (POST, GET, etc.)
     allow_headers=["*"],
 )
 
