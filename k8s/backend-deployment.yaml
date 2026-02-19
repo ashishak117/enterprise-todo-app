@@ -29,7 +29,7 @@ spec:
       containers:
       - name: todo-backend
         # REPLACE THIS WITH YOUR DOCKER HUB USERNAME!
-        image: <YOUR_DOCKER_HUB_USERNAME>/enterprise-todo-backend:latest
+        image: ashishak117/enterprise-todo-backend:latest
         ports:
         - containerPort: 8000
         env:
