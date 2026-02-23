@@ -7,7 +7,7 @@ function App() {
   const [title, setTitle] = useState('')
 
   // Backend URL
-  const API_URL = "http://3.82.142.12:8000"
+  const API_URL = "http://54.211.230.19:8000"
 
   useEffect(() => {
     fetchTodos()
