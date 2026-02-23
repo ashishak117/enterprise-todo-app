@@ -67,7 +67,7 @@ origins = [
     "http://localhost:5173",    # React App (Localhost)
     "http://127.0.0.1:5173",    # React App (IP)
     "http://localhost:8000",    # Backend (Self)
-    "http://3.82.142.12:8000",    # Backend (IP)
+    "http://54.211.230.19:8000",    # Backend (IP)
 ]
 
 # --- CORS Configuration (Bulletproof Version) ---
