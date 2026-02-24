@@ -51,7 +51,7 @@ function App() {
       <div className="app-container">
         <header className="app-header">
           <h1>🚀 Enterprise Tasks</h1>
-          <p className="subtitle">Manage your cloudddddddddddddd infrastructure</p>
+          <p className="subtitle">Manage your aws infrastructure</p>
         </header>
 
         <form className="input-group" onSubmit={addTodo}>
